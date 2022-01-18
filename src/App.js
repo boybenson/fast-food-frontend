@@ -1,7 +1,15 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import HomeContainer from "./pages/home/home-container";
 
 const App = () => {
-  return <div>Hello Fast Food</div>;
+  return (
+    <BrowserRouter>
+      <div>
+        <HomeContainer />
+      </div>
+    </BrowserRouter>
+  );
 };
 
 export default App;

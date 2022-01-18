@@ -2,8 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
+.top-heading {
+  min-height: 10vh;
+}
+
+.bottom-heading {
+  min-height: 90vh;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
