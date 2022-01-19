@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const HomeComponent = ({ support, followUs, countries, joinUs }) => {
   return (
     <div>
@@ -17,18 +17,18 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
           </ul>
 
           <div className="flex gap-x-4">
-            <NavLink
-              to="/"
+            <Link
+              to="/auth/signin"
               className="py-2 px-6 rounded-2xl  border-2 border-gray-400"
             >
               Login
-            </NavLink>
-            <NavLink
-              to="/"
+            </Link>
+            <Link
+              to="/auth/signup"
               className="bg-primary text-white py-2 px-4 rounded-2xl"
             >
               Get Started
-            </NavLink>
+            </Link>
           </div>
         </section>
 
@@ -43,18 +43,18 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
             </p>
 
             <div className="flex gap-x-4">
-              <NavLink
+              <Link
                 to="/"
                 className="bg-primary text-white py-2 px-4 rounded-2xl"
               >
                 Get Started
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 to="/"
                 className="py-2 px-6 rounded-2xl  border-2 border-gray-400"
               >
                 Learn More
-              </NavLink>
+              </Link>
             </div>
           </div>
           <div className="flex flex-col justify-end">
