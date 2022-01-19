@@ -17,7 +17,7 @@ const SigninComponent = () => {
             <img src="/assets/images/auth-image.svg" alt="pic" />
           </div>
           <div className="">
-            <form className="w-1/2">
+            <form className="w-11/12">
               <h4 className="text-center font-bold text-2xl">Login</h4>
               <div className="my-4">
                 <input

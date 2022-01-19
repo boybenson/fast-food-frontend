@@ -17,7 +17,7 @@ const SignupComponent = () => {
             <img src="/assets/images/auth-image.svg" alt="pic" />
           </div>
           <div className="">
-            <form className="w-1/2">
+            <form className="w-11/12">
               <h4 className="text-center font-bold text-2xl">
                 Create An Account
               </h4>
@@ -28,7 +28,7 @@ const SignupComponent = () => {
                   placeholder="email"
                 />
               </div>
-              <div className="my-4 grid grid-cols-4 gap-x-2">
+              <div className="my-4 grid grid-cols-7 gap-x-2">
                 <input
                   typeo="text"
                   value="+233"
@@ -37,7 +37,7 @@ const SignupComponent = () => {
                 />
                 <input
                   type="tel"
-                  className="border border-gray-600 w-full py-2 px-4 rounded-md col-span-3"
+                  className="border border-gray-600 w-full py-2 px-4 rounded-md col-span-6"
                   placeholder="546949655"
                   maxLength={9}
                 />
