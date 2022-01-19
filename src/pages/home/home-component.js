@@ -1,12 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-const HomeComponent = () => {
+const HomeComponent = ({ support, followUs, countries, joinUs }) => {
   return (
     <div>
       <section className="bg-landingBgColor">
         {/* heading */}
         <section className="flex justify-between w-11/12 my-0 mx-auto items-center top-heading">
-          <div className="text-3xl text-primary font-extrabold">FedUp</div>
+          <div className="text-3xl text-primary font-extrabold">
+            <img src="/assets/images/logo.svg" alt="logo" />
+          </div>
 
           <ul className="flex gap-x-6">
             <li className="cursor-pointer">How It Works</li>
@@ -63,7 +65,7 @@ const HomeComponent = () => {
 
       {/* image and description */}
       <section className="mt-4">
-        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 py-6">
+        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 py-10">
           <div>
             <img src="/assets/images/img1.svg" alt="img 1" />
           </div>
@@ -81,7 +83,7 @@ const HomeComponent = () => {
         </div>
 
         <hr />
-        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 mt-10 py-6">
+        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 mt-10 py-10">
           <div>
             <h1 className="text-5xl font-bold">
               Order from your favourite chefs.
@@ -100,6 +102,65 @@ const HomeComponent = () => {
           </div>
         </div>
       </section>
+
+      <footer className="bg-footerBgColor">
+        <div className="w-11/12 my-0 mx-auto py-12">
+          <section className="flex gap-x-8 items-start py-6">
+            <div>
+              <img src="/assets/images/logo.svg" alt="logo" />
+            </div>
+            <ul>
+              <h4 className="font-bold text-white text-xl">support</h4>
+              {support.map((data, index) => (
+                <li key={index} className="text-sm text-gray-500 mt-2">
+                  {data.label}
+                </li>
+              ))}
+            </ul>
+            <ul>
+              <h4 className="font-bold text-white text-xl">Follow Us</h4>
+              {followUs.map((data, index) => (
+                <li key={index} className="text-sm text-gray-500 mt-2">
+                  {data.label}
+                </li>
+              ))}
+            </ul>
+            <ul>
+              <h4 className="font-bold text-white text-xl">Countries</h4>
+              {countries.map((data, index) => (
+                <li key={index} className="text-sm text-gray-500 mt-2">
+                  {data.label}
+                </li>
+              ))}
+            </ul>
+            <ul>
+              <h4 className="font-bold text-white text-xl">Join Us</h4>
+              {joinUs.map((data, index) => (
+                <li key={index} className="text-sm text-gray-500 mt-2">
+                  {data.label}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="flex justify-between items-center mt-4">
+            <div className="flex gap-x-4">
+              <p className="text-xs text-gray-500">
+                © {new Date().getFullYear()} Fedup Co. All rights reserved.
+              </p>
+              <p className="text-white text-xs">Terms Of Service</p>
+              <p className="text-white text-xs">Privacy</p>
+            </div>
+            <div>
+              <img
+                src="/assets/images/stores.svg"
+                alt="stores logos"
+                className="w-9/12"
+              />
+            </div>
+          </section>
+        </div>
+      </footer>
     </div>
   );
 };

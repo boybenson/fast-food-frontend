@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         primary: "#EA421A",
         landingBgColor: "#FDECE8",
+        footerBgColor: "#1F1F1F",
       },
     },
   },
