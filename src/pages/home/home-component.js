@@ -5,7 +5,7 @@ const HomeComponent = () => {
     <div>
       <section className="bg-landingBgColor">
         {/* heading */}
-        <section className="flex justify-between w-11/12 my-0 mx-auto items-center py-2 top-heading">
+        <section className="flex justify-between w-11/12 my-0 mx-auto items-center top-heading">
           <div className="text-3xl text-primary font-extrabold">FedUp</div>
 
           <ul className="flex gap-x-6">
@@ -31,7 +31,7 @@ const HomeComponent = () => {
         </section>
 
         {/* landing image and writeup */}
-        <section className="bg-landingBgColor w-11/12 my-0 mx-auto grid grid-cols-2 bottom-heading">
+        <section className="bg-landingBgColor w-10/12 my-0 mx-auto grid grid-cols-2 bottom-heading">
           <div className="flex flex-col justify-center gap-y-10">
             <h1 className="text-5xl">We are building an army of chefs</h1>
             <p className="text-lg">
@@ -55,10 +55,50 @@ const HomeComponent = () => {
               </NavLink>
             </div>
           </div>
-          <div className="flex justify-self-end">
+          <div className="flex flex-col justify-end">
             <img src="/assets/images/landing-img.svg" alt="logo" />
           </div>
         </section>
+      </section>
+
+      {/* image and description */}
+      <section className="mt-4">
+        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 py-6">
+          <div>
+            <img src="/assets/images/img1.svg" alt="img 1" />
+          </div>
+          <div>
+            <h1 className="text-5xl font-bold">Everything in one place.</h1>
+            <p className="text-md mt-6">
+              Whatever you want, we can get it. Order delivery for yourself and
+              your friends and watch in realtime as your postmate brings you all
+              the things you love.
+            </p>
+            <button className="bg-primary text-white py-2 px-4 rounded-2xl mt-4">
+              Get the App
+            </button>
+          </div>
+        </div>
+
+        <hr />
+        <div className="w-9/12 my-0 mx-auto flex items-center gap-x-10 mt-10 py-6">
+          <div>
+            <h1 className="text-5xl font-bold">
+              Order from your favourite chefs.
+            </h1>
+            <p className="text-md mt-6">
+              Whatever you want, we can get it. Order delivery for yourself and
+              your friends and watch in realtime as your postmate brings you all
+              the things you love.
+            </p>
+            <button className="bg-primary text-white py-2 px-4 rounded-2xl mt-4">
+              Find Chefs
+            </button>
+          </div>
+          <div>
+            <img src="/assets/images/img1.svg" alt="img 1" />
+          </div>
+        </div>
       </section>
     </div>
   );
