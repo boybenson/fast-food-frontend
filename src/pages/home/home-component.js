@@ -103,6 +103,29 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
         </div>
       </section>
 
+      {/* ready to order section */}
+      <section className="bg-landingBgColor">
+        <div className="text-center py-14">
+          <h1 className="text-5xl font-bold py-2">Ready To Order?</h1>
+          <p className="text-sm">
+            Enter your location to get access to your favourite food within the
+            shortest possible time.
+          </p>
+          <form className="py-4">
+            <input
+              type="text"
+              className="py-4 px-12 mr-2 rounded-md"
+              placeholder="Legon Campus...."
+            />
+            <input
+              type="submit"
+              value="send"
+              className="bg-primary text-white py-4 px-4 rounded-md cursor-pointer"
+            />
+          </form>
+        </div>
+      </section>
+
       <footer className="bg-footerBgColor">
         <div className="w-11/12 my-0 mx-auto py-12">
           <section className="flex gap-x-8 items-start py-6">
