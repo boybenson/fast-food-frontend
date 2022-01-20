@@ -33,7 +33,7 @@ const SigninComponent = () => {
                   placeholder="password"
                 />
               </div>
-              <p className="my-2 text-right">Forget Password?</p>
+              <p className="my-2 text-right">Forgot Password?</p>
               <div className="my-4">
                 <input
                   type="submit"

@@ -52,8 +52,13 @@ const SignupComponent = () => {
               <div>
                 <small>
                   By Signing up, you agree to our{" "}
-                  <b className="font-bold">Terms and Conditions</b> and{" "}
-                  <b>Privacy Statement</b>
+                  <b className="font-bold underline cursor-pointer">
+                    Terms & Conditions
+                  </b>{" "}
+                  and{" "}
+                  <b className="font-bold underline cursor-pointer">
+                    Privacy Statement
+                  </b>
                 </small>
               </div>
               <div className="my-4">
