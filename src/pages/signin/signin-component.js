@@ -12,11 +12,11 @@ const SigninComponent = () => {
       </header>
 
       <section className="bottom-heading w-11/12 my-0 mx-auto">
-        <div className="grid grid-cols-2 items-center gap-x-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-x-20">
           <div className="">
             <img src="/assets/images/auth-image.svg" alt="pic" />
           </div>
-          <div className="">
+          <div className="flex justify-center">
             <form className="w-11/12">
               <h4 className="text-center font-bold text-2xl">Login</h4>
               <div className="my-4">

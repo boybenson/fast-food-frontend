@@ -12,11 +12,11 @@ const SignupComponent = () => {
       </header>
 
       <section className="bottom-heading w-11/12 my-0 mx-auto">
-        <div className="grid grid-cols-2 items-center gap-x-20">
+        <div className="grid grid-cols-1 justify-center md:grid-cols-2 items-center gap-x-20">
           <div className="">
             <img src="/assets/images/auth-image.svg" alt="pic" />
           </div>
-          <div className="">
+          <div className="flex justify-center">
             <form className="w-11/12">
               <h4 className="text-center font-bold text-2xl">
                 Create An Account
@@ -32,12 +32,12 @@ const SignupComponent = () => {
                 <input
                   typeo="text"
                   value="+233"
-                  className="border border-gray-600 py-2 px-4 rounded-md col-span-1 bg-gray-200"
+                  className="border border-gray-600 py-2 px-4 rounded-md col-span-2 md:col-span-1 bg-gray-200"
                   disabled
                 />
                 <input
                   type="tel"
-                  className="border border-gray-600 w-full py-2 px-4 rounded-md col-span-6"
+                  className="border border-gray-600 w-full py-2 px-4 rounded-md col-span-5 md:col-span-6"
                   placeholder="546949655"
                   maxLength={9}
                 />
