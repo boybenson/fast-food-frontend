@@ -36,10 +36,10 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
           </div>
 
           {/* mobile view menu icons */}
-          <div className="flex items-center gap-x-4">
+          <div className="flex items-center gap-x-4 md:hidden">
             <Link
               to="/auth/signup"
-              className="bg-primary text-white py-2 px-6 rounded-2xl"
+              className="bg-primary text-white py-2 px-6 rounded-xl"
             >
               <p>sign up</p>
             </Link>
@@ -170,7 +170,7 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
 
       <footer className="bg-footerBgColor">
         <div className="w-11/12 my-0 mx-auto py-12">
-          <section className="flex gap-x-8 items-start py-6">
+          <section className="flex gap-x-4 items-start py-6">
             <div>
               <img src="/assets/images/logo.svg" alt="logo" />
             </div>
@@ -198,7 +198,7 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
                 </li>
               ))}
             </ul>
-            <ul>
+            <ul className="hidden m:block">
               <h4 className="font-bold text-white text-xl">Join Us</h4>
               {joinUs.map((data, index) => (
                 <li key={index} className="text-sm text-gray-500 mt-2">
