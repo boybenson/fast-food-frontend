@@ -21,7 +21,7 @@ const HeaderComponent = () => {
       <div className="hidden md:block">
         <div className="flex gap-x-4">
           <NavLink
-            to="/auth/signin"
+            to="/en"
             className="py-2 px-6 rounded-2xl  border-2 border-gray-400"
           >
             Login

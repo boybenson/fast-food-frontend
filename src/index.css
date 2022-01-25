@@ -12,6 +12,18 @@
 .bottom-heading {
   min-height: 90vh;
 }
+
+.carousel img {
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
