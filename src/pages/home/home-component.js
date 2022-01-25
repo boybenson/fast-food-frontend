@@ -1,65 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-const HomeComponent = ({ support, followUs, countries, joinUs }) => {
+import Footer from "../../components/footer/footer-container";
+import HeaderContainer from "../../components/header/header-container";
+const HomeComponent = () => {
   return (
     <div>
       <section className="bg-landingBgColor">
         {/* heading */}
-        <section className="flex justify-between w-11/12 my-0 mx-auto items-center top-heading">
-          <div>
-            <img src="/assets/images/logo.svg" alt="logo" />
-          </div>
-
-          <div className="hidden md:flex">
-            <ul className="flex gap-x-6">
-              <li className="cursor-pointer">How It Works</li>
-              <li className="cursor-pointer">Testimonials</li>
-              <li className="cursor-pointer">FAQs</li>
-            </ul>
-          </div>
-
-          <div className="hidden md:block">
-            <div className="flex gap-x-4">
-              <Link
-                to="/auth/signin"
-                className="py-2 px-6 rounded-2xl  border-2 border-gray-400"
-              >
-                Login
-              </Link>
-              <Link
-                to="/auth/signup"
-                className="bg-primary text-white py-2 px-4 rounded-2xl"
-              >
-                Get Started
-              </Link>
-            </div>
-          </div>
-
-          {/* mobile view menu icons */}
-          <div className="flex items-center gap-x-4 md:hidden">
-            <Link
-              to="/auth/signup"
-              className="bg-primary text-white py-2 px-6 rounded-xl"
-            >
-              <p>sign up</p>
-            </Link>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-12 w-12"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </div>
-        </section>
-
+        <HeaderContainer />
         {/* landing image and writeup */}
         <section className="bg-landingBgColor w-10/12 my-0 mx-auto grid grid-cols-1 md:grid-cols-2 bottom-heading">
           <div className="flex flex-col justify-center gap-y-6 md:gap-y-10">
@@ -167,65 +115,7 @@ const HomeComponent = ({ support, followUs, countries, joinUs }) => {
           </form>
         </div>
       </section>
-
-      <footer className="bg-footerBgColor">
-        <div className="w-11/12 my-0 mx-auto py-12">
-          <section className="flex gap-x-4 items-start py-6">
-            <div>
-              <img src="/assets/images/logo.svg" alt="logo" />
-            </div>
-            <ul>
-              <h4 className="font-bold text-white text-xl">support</h4>
-              {support.map((data, index) => (
-                <li key={index} className="text-sm text-gray-500 mt-2">
-                  {data.label}
-                </li>
-              ))}
-            </ul>
-            <ul>
-              <h4 className="font-bold text-white text-xl">Follow Us</h4>
-              {followUs.map((data, index) => (
-                <li key={index} className="text-sm text-gray-500 mt-2">
-                  {data.label}
-                </li>
-              ))}
-            </ul>
-            <ul>
-              <h4 className="font-bold text-white text-xl">Countries</h4>
-              {countries.map((data, index) => (
-                <li key={index} className="text-sm text-gray-500 mt-2">
-                  {data.label}
-                </li>
-              ))}
-            </ul>
-            <ul className="hidden m:block">
-              <h4 className="font-bold text-white text-xl">Join Us</h4>
-              {joinUs.map((data, index) => (
-                <li key={index} className="text-sm text-gray-500 mt-2">
-                  {data.label}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="flex justify-between items-center mt-4">
-            <div className="flex gap-x-4">
-              <p className="text-xs text-gray-500">
-                © {new Date().getFullYear()} Fedup Co. All rights reserved.
-              </p>
-              <p className="text-white text-xs">Terms Of Service</p>
-              <p className="text-white text-xs">Privacy</p>
-            </div>
-            <div>
-              <img
-                src="/assets/images/stores.svg"
-                alt="stores logos"
-                className="w-9/12"
-              />
-            </div>
-          </section>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

@@ -1,17 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../../components/footer/footer-container";
+import HeaderContainer from "../../components/header/header-container";
 const SignupComponent = () => {
   return (
     <div>
-      <header className="top-heading">
-        <div className="w-11/12 my-0 mx-auto">
-          <Link to="/">
-            <img src="/assets/images/logo.svg" alt="logo" />
-          </Link>
-        </div>
-      </header>
-
-      <section className="bottom-heading w-11/12 my-0 mx-auto">
+      <HeaderContainer />
+      <section className="py-10 w-11/12 my-0 mx-auto">
         <div className="grid grid-cols-1 justify-center md:grid-cols-2 items-center gap-x-20">
           <div className="">
             <img src="/assets/images/auth-image.svg" alt="pic" />
@@ -78,6 +73,7 @@ const SignupComponent = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

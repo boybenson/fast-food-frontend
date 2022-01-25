@@ -1,17 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import HeaderContainer from "../../components/header/header-container";
+import FooterContainer from "../../components/footer/footer-container";
 const SigninComponent = () => {
   return (
     <div>
-      <header className="top-heading">
-        <div className="w-11/12 my-0 mx-auto">
-          <Link to="/">
-            <img src="/assets/images/logo.svg" alt="logo" />
-          </Link>
-        </div>
-      </header>
+      <HeaderContainer />
 
-      <section className="bottom-heading w-11/12 my-0 mx-auto">
+      <section className="py-10 w-11/12 my-0 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-x-20">
           <div className="">
             <img src="/assets/images/auth-image.svg" alt="pic" />
@@ -43,14 +39,16 @@ const SigninComponent = () => {
               </div>
               <div className="flex gap-x-2">
                 <p>Don't have an account ? </p>
-                <Link to="/auth/signup" className="underline">
+                <NavLink to="/auth/signup" className="underline">
                   Sign up
-                </Link>
+                </NavLink>
               </div>
             </form>
           </div>
         </div>
       </section>
+
+      <FooterContainer />
     </div>
   );
 };
