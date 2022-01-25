@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ bg }) => {
   return (
     <section className="flex justify-between w-11/12 my-0 mx-auto items-center top-heading">
       <div>
@@ -24,7 +24,7 @@ const HeaderComponent = () => {
             to="/en"
             className="py-2 px-6 rounded-2xl  border-2 border-gray-400"
           >
-            Login
+            foods/Dish
           </NavLink>
           <NavLink
             to="/auth/signup"

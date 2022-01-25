@@ -37,8 +37,7 @@ const Slider = () => {
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5 className="text-xl">Juicy Berry Juice</h5>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
@@ -48,8 +47,7 @@ const Slider = () => {
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5 className="text-xl">Beef Burgers</h5>
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
@@ -59,8 +57,7 @@ const Slider = () => {
             alt="..."
           />
           <div className="carousel-caption hidden md:block absolute text-center">
-            <h5 className="text-xl">Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5 className="text-xl font-bold">Grilled Chicken Khebab</h5>
           </div>
         </div>
       </div>
