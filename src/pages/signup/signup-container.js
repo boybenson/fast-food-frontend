@@ -4,7 +4,7 @@ import { SIGNUP } from "../../graphql/mutations/auth.js";
 import SignupComponent from "./signup-component.js";
 
 const SignupContainer = () => {
-  const [signUp, { error, loading, data }] = useMutation(SIGNUP);
+  const [signUp, { error, loading }] = useMutation(SIGNUP);
   const initialValues = { email: "", password: "", phone: "" };
 
   const handleSubmit = (values) => {
