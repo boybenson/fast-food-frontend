@@ -5,7 +5,8 @@ import HeaderContainer from "../../components/header/header-container";
 import FooterContainer from "../../components/footer/footer-container";
 import { signInFormValidate } from "../../helpers/forms-validate";
 import TextField from "../../components/fields/text-field";
-const SigninComponent = ({ initialValues, handleSubmit }) => {
+import { RotateSpinner } from "react-spinners-kit";
+const SigninComponent = ({ initialValues, handleSubmit, loading }) => {
   return (
     <div>
       <HeaderContainer />
@@ -59,12 +60,17 @@ const SigninComponent = ({ initialValues, handleSubmit }) => {
                   </div>
                   <p className="my-2 text-right">Forgot Password?</p>
                   <div className="my-4">
-                    <input
-                      type="submit"
+                    <button
                       disabled={isSubmitting}
-                      value="Sign In"
-                      className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer"
-                    />
+                      type="submit"
+                      className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer text-center flex justify-center"
+                    >
+                      {loading ? (
+                        <RotateSpinner size={25} color="white" />
+                      ) : (
+                        <p>Sign In</p>
+                      )}
+                    </button>
                   </div>
                   <div className="flex gap-x-2">
                     <p>Don't have an account ? </p>
