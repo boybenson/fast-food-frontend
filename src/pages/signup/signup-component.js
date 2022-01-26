@@ -1,8 +1,11 @@
+import { Formik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
+import TextField from "../../components/fields/text-field";
 import Footer from "../../components/footer/footer-container";
 import HeaderContainer from "../../components/header/header-container";
-const SignupComponent = () => {
+import { signUpFormValidate } from "../../helpers/forms-validate";
+const SignupComponent = ({ initialValues, handleSubmit }) => {
   return (
     <div>
       <HeaderContainer />
@@ -12,64 +15,91 @@ const SignupComponent = () => {
             <img src="/assets/images/auth-image.svg" alt="pic" />
           </div>
           <div className="flex justify-center">
-            <form className="w-11/12">
-              <h4 className="text-center font-bold text-2xl">
-                Create An Account
-              </h4>
-              <div className="my-4">
-                <input
-                  type="email"
-                  className="border border-gray-600 w-full py-2 px-4 rounded-md"
-                  placeholder="email"
-                />
-              </div>
-              <div className="my-4 grid grid-cols-7 gap-x-2">
-                <input
-                  typeo="text"
-                  value="+233"
-                  className="border border-gray-600 py-2 px-4 rounded-md col-span-2 md:col-span-1 bg-gray-200"
-                  disabled
-                />
-                <input
-                  type="tel"
-                  className="border border-gray-600 w-full py-2 px-4 rounded-md col-span-5 md:col-span-6"
-                  placeholder="546949655"
-                  maxLength={9}
-                />
-              </div>
-              <div className="my-4">
-                <input
-                  type="password"
-                  className="border border-gray-600 w-full  py-2 px-4 rounded-md"
-                  placeholder="password"
-                />
-              </div>
-              <div>
-                <small>
-                  By Signing up, you agree to our{" "}
-                  <b className="font-bold underline cursor-pointer">
-                    Terms & Conditions
-                  </b>{" "}
-                  and{" "}
-                  <b className="font-bold underline cursor-pointer">
-                    Privacy Statement
-                  </b>
-                </small>
-              </div>
-              <div className="my-4">
-                <input
-                  type="submit"
-                  value="sign up"
-                  className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer"
-                />
-              </div>
-              <div className="flex gap-x-2">
-                <p>Already have an account ? </p>
-                <Link to="/auth/signin" className="underline">
-                  Sign in
-                </Link>
-              </div>
-            </form>
+            <Formik
+              initialValues={initialValues}
+              validate={signUpFormValidate}
+              onSubmit={(values) => {
+                handleSubmit(values);
+              }}
+            >
+              {({
+                values,
+                errors,
+                touched,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                isSubmitting,
+              }) => (
+                <form className="w-11/12" onSubmit={handleSubmit}>
+                  <h4 className="text-center font-bold text-2xl">
+                    Create An Account
+                  </h4>
+                  <div className="my-4">
+                    <TextField
+                      type="email"
+                      placeholder="email"
+                      name="email"
+                      value={values.email}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                    />
+                  </div>
+                  <div className="my-4">
+                    <TextField
+                      type="tel"
+                      placeholder="0546949655"
+                      name="phone"
+                      value={values.phone}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                    />
+                  </div>
+                  <div className="my-4">
+                    <TextField
+                      type="password"
+                      placeholder="password"
+                      name="password"
+                      value={values.password}
+                      onBlur={handleBlur}
+                      onChange={handleChange}
+                      touched={touched}
+                      errors={errors}
+                    />
+                  </div>
+                  <div>
+                    <small>
+                      By Signing up, you agree to our{" "}
+                      <b className="font-bold underline cursor-pointer">
+                        Terms & Conditions
+                      </b>{" "}
+                      and{" "}
+                      <b className="font-bold underline cursor-pointer">
+                        Privacy Statement
+                      </b>
+                    </small>
+                  </div>
+                  <div className="my-4">
+                    <input
+                      type="submit"
+                      value="sign up"
+                      disabled={isSubmitting}
+                      className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer"
+                    />
+                  </div>
+                  <div className="flex gap-x-2">
+                    <p>Already have an account ? </p>
+                    <Link to="/auth/signin" className="underline">
+                      Sign in
+                    </Link>
+                  </div>
+                </form>
+              )}
+            </Formik>
           </div>
         </div>
       </section>
