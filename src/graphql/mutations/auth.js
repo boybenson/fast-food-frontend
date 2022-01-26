@@ -11,3 +11,15 @@ export const SIGNIN = gql`
     }
   }
 `;
+
+export const SIGNUP = gql`
+  mutation Mutation($phone: String, $content: UserContent) {
+    signUp(phone: $phone, content: $content) {
+      id
+      email
+      phone
+      role
+      accessToken
+    }
+  }
+`;
