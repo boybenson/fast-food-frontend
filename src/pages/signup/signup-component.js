@@ -1,11 +1,12 @@
 import { Formik } from "formik";
 import React from "react";
 import { Link } from "react-router-dom";
+import { RotateSpinner } from "react-spinners-kit";
 import TextField from "../../components/fields/text-field";
 import Footer from "../../components/footer/footer-container";
 import HeaderContainer from "../../components/header/header-container";
 import { signUpFormValidate } from "../../helpers/forms-validate";
-const SignupComponent = ({ initialValues, handleSubmit }) => {
+const SignupComponent = ({ initialValues, handleSubmit, loading }) => {
   return (
     <div>
       <HeaderContainer />
@@ -84,12 +85,17 @@ const SignupComponent = ({ initialValues, handleSubmit }) => {
                     </small>
                   </div>
                   <div className="my-4">
-                    <input
-                      type="submit"
-                      value="sign up"
+                    <button
                       disabled={isSubmitting}
-                      className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer"
-                    />
+                      type="submit"
+                      className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer text-center flex justify-center"
+                    >
+                      {loading ? (
+                        <RotateSpinner size={25} color="white" />
+                      ) : (
+                        <p>Sign Up</p>
+                      )}
+                    </button>
                   </div>
                   <div className="flex gap-x-2">
                     <p>Already have an account ? </p>

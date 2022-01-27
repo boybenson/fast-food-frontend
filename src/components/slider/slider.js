@@ -4,7 +4,7 @@ const Slider = () => {
   return (
     <div
       id="carouselExampleCaptions"
-      className="carousel slide relative my-4"
+      className="carousel slide relative my-4 rounded-lg"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">

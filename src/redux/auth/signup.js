@@ -9,21 +9,21 @@ const initialState = {
   error: null,
 };
 
-export const signInSlice = createSlice({
+export const signUpSlice = createSlice({
   name: "Auth",
   initialState,
   reducers: {
-    signin: (state, action) => {
+    signup: (state, action) => {
       state.userInfo = action.payload;
       state.error = null;
     },
-    signinError: (state, action) => {
+    signupError: (state, action) => {
       state.userInfo = null;
       state.error = action.payload;
     },
   },
 });
 
-export const { signin, signinError } = signInSlice.actions;
+export const { signup, signupError } = signUpSlice.actions;
 
-export default signInSlice.reducer;
+export default signUpSlice.reducer;

@@ -3,6 +3,6 @@ import signinReducer from "./auth/signin";
 
 export const store = configureStore({
   reducer: {
-    signin: signinReducer,
+    user: signinReducer,
   },
 });

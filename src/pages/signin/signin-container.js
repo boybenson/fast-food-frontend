@@ -15,11 +15,10 @@ const SigninContainer = () => {
     signIn({
       variables: { content: values },
       onCompleted: (data) => {
-        console.log("data from backend api", data);
+        localStorage.setItem("userInfo", JSON.stringify(data.signIn));
         dispatch(signin(data.signIn));
       },
       onError: (err) => {
-        console.log("error from backend api", err);
         dispatch(signinError(err));
       },
     });
