@@ -6,8 +6,9 @@ const SignUp = lazy(() => import("../pages/signup/signup-container"));
 const StoreFront = lazy(() =>
   import("../pages/store-front/store-front-container")
 );
+const Category = lazy(() => import("../pages/category/category-container"));
 
-export const outerRoutes = [
+export const unProtectedRoutes = [
   { path: "/", element: <Home /> },
   {
     path: "/auth/signin",
@@ -20,5 +21,9 @@ export const outerRoutes = [
   {
     path: "/en",
     element: <StoreFront />,
+  },
+  {
+    path: "/en/category",
+    element: <Category />,
   },
 ];
