@@ -23,7 +23,7 @@ export const unProtectedRoutes = [
     element: <StoreFront />,
   },
   {
-    path: "/en/category",
+    path: "/en/category/:categoryName",
     element: <Category />,
   },
 ];

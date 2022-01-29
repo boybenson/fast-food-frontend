@@ -20,11 +20,8 @@ const StoreFrontComponent = () => {
           </h3>
           <div className="w-11/12 my-0 mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-4 ">
             {categories.map(({ name, image, duration }, index) => (
-              <NavLink to="/en/category">
-                <div
-                  className="max-w-sm rounded-lg overflow-hidden shadow-xs grid-cols-span-1 bg-white"
-                  key={index}
-                >
+              <NavLink to={`/en/category/${name.toLowerCase()}`} key={index}>
+                <div className="max-w-sm rounded-lg overflow-hidden shadow-xs grid-cols-span-1 bg-white">
                   <img className="w-full" src={image} alt="img" />
                   <div className="px-6 py-4">
                     <div className="font-bold text-xl mb-2">{name}</div>

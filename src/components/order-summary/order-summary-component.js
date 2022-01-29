@@ -26,7 +26,7 @@ const OrderSummaryComponent = () => {
         />
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Items 5</h3>
-          <h3>GHC 415.00</h3>
+          <h3>GHC 415</h3>
         </div>
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Shipping Cost</h3>
@@ -37,7 +37,7 @@ const OrderSummaryComponent = () => {
           <input
             type="text"
             className="w-full py-2 px-2 rounded-lg"
-            placeholder="Enter Location..."
+            placeholder="Enter Location . . ."
           />
         </div>
 
