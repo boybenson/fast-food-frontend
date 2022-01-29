@@ -7,7 +7,7 @@ const HomeComponent = () => {
     <div>
       <section className="bg-landingBgColor">
         {/* heading */}
-        <HeaderContainer />
+        <HeaderContainer bg="bg-landingBgColor" />
         {/* landing image and writeup */}
         <section className="bg-landingBgColor w-10/12 my-0 mx-auto grid grid-cols-1 md:grid-cols-2 bottom-heading">
           <div className="flex flex-col justify-center gap-y-6 md:gap-y-10">

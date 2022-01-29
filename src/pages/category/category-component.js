@@ -3,7 +3,7 @@ import Header from "../../components/header/header-container";
 import Footer from "../../components/footer/footer-container";
 import OrderSummaryContainer from "../../components/order-summary/order-summary-container";
 
-const CategoryComponent = ({ data, categoryName }) => {
+const CategoryComponent = ({ data, categoryName, addToCart }) => {
   return (
     <div>
       <Header />
@@ -21,7 +21,10 @@ const CategoryComponent = ({ data, categoryName }) => {
                   <p>Price : GHC {food.price}</p>
                 </div>
                 <div>
-                  <button className="bg-primary w-full py-2 text-white rounded-lg">
+                  <button
+                    className="bg-primary w-full py-2 text-white rounded-lg"
+                    onClick={() => addToCart(food)}
+                  >
                     Add To Cart
                   </button>
                 </div>

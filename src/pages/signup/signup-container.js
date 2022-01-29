@@ -21,7 +21,6 @@ const SignupContainer = () => {
         dispatch(signin(data.signUp));
       },
       onError: (err) => {
-        console.log("error from backend api", err);
         dispatch(signinError(err));
       },
     });

@@ -1,12 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-const HeaderComponent = () => {
-  const { userInfo } = useSelector((state) => state.user);
-
+const HeaderComponent = ({ userInfo, cartItems, bg }) => {
   return (
-    <div className="border shadow-sm">
+    <div className={`border shadow-sm sticky top-0 ${bg ?? "bg-white"}`}>
       <section className="flex justify-between w-11/12 my-0 mx-auto items-center  top-heading">
         <div>
           <NavLink to="/">
@@ -84,7 +81,7 @@ const HeaderComponent = () => {
                     />
                   </svg>
                   <span className="absolute right-0 top-0 rounded-full bg-primary w-5 h-5 top right p-0 text-white font-mono text-md  leading-tight text-center">
-                    0
+                    {cartItems?.length}
                   </span>
                 </span>
               </div>
@@ -155,7 +152,7 @@ const HeaderComponent = () => {
                 />
               </svg>
               <span className="absolute right-0 top-0 rounded-full bg-primary w-5 h-5 top right p-0 text-white font-mono text-md  leading-tight text-center">
-                0
+                {cartItems?.length}
               </span>
             </span>
           </div>

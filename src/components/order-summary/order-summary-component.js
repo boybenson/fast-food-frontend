@@ -1,6 +1,6 @@
 import React from "react";
 
-const OrderSummaryComponent = () => {
+const OrderSummaryComponent = ({ cartItems }) => {
   return (
     <div className="bg-gray-200 rounded-lg py-2 my-2">
       <div className="px-4">
@@ -25,7 +25,7 @@ const OrderSummaryComponent = () => {
           style={{ color: "#EA421A", backgroundColor: "#EA421A", height: 3 }}
         />
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
-          <h3 className=" ">Items 5</h3>
+          <h3 className=" ">Items {cartItems.length}</h3>
           <h3>GHC 415</h3>
         </div>
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
