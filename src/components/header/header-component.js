@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const HeaderComponent = ({ userInfo, cartItems, bg }) => {
+const HeaderComponent = ({ userInfo, cartItems, bg, handleLogout }) => {
   return (
     <div className={`border shadow-sm sticky top-0 ${bg ?? "bg-white"}`}>
       <section className="flex justify-between w-11/12 my-0 mx-auto items-center  top-heading">
@@ -86,7 +86,10 @@ const HeaderComponent = ({ userInfo, cartItems, bg }) => {
                 </span>
               </div>
               |
-              <button className="bg-primary text-white px-2 rounded-lg flex items-center py-2 gap-x-2">
+              <button
+                className="bg-primary text-white px-2 rounded-lg flex items-center py-2 gap-x-2"
+                onClick={() => handleLogout()}
+              >
                 <p className="text-xs">Logout</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

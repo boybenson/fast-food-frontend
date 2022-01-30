@@ -21,9 +21,13 @@ export const signInSlice = createSlice({
       state.userInfo = null;
       state.error = action.payload;
     },
+    signOut: (state, action) => {
+      state.userInfo = null;
+      state.error = null;
+    },
   },
 });
 
-export const { signin, signinError } = signInSlice.actions;
+export const { signin, signinError, signOut } = signInSlice.actions;
 
 export default signInSlice.reducer;
