@@ -22,11 +22,11 @@ const OrderSummaryComponent = ({ cartItems }) => {
           </svg>
         </h1>
         <hr
-          style={{ color: "#EA421A", backgroundColor: "#EA421A", height: 3 }}
+          style={{ color: "#EA421A", backgroundColor: "#EA421A", height: 2 }}
         />
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Items {cartItems.length}</h3>
-          <h3>GHC 415</h3>
+          <h3>GHC 415.00</h3>
         </div>
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Shipping Cost</h3>

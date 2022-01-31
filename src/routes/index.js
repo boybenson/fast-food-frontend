@@ -7,6 +7,7 @@ const StoreFront = lazy(() =>
   import("../pages/store-front/store-front-container")
 );
 const Category = lazy(() => import("../pages/category/category-container"));
+const Cart = lazy(() => import("../pages/cart-screen/cart-screen-container"));
 
 export const unProtectedRoutes = [
   { path: "/", element: <Home /> },
@@ -25,5 +26,9 @@ export const unProtectedRoutes = [
   {
     path: "/en/category/:categoryName",
     element: <Category />,
+  },
+  {
+    path: "/en/cart",
+    element: <Cart />,
   },
 ];

@@ -28,4 +28,4 @@ const FooterContainer = () => {
   );
 };
 
-export default FooterContainer;
+export default React.memo(FooterContainer);
