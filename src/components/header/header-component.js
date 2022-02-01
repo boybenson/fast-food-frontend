@@ -46,7 +46,10 @@ const HeaderComponent = ({ userInfo, cartItems, bg, handleLogout }) => {
         {userInfo && (
           <div className="hidden md:block">
             <div className="flex gap-x-4 items-center">
-              <NavLink to="/en" className="py-2 px-2 rounded-md flex gap-x-2">
+              <NavLink
+                to="/en/account"
+                className="py-2 px-2 rounded-md flex gap-x-2"
+              >
                 <p>My Account</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,20 +127,22 @@ const HeaderComponent = ({ userInfo, cartItems, bg, handleLogout }) => {
           )}
 
           {userInfo && (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-10 w-10"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <NavLink to="/en/account">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-10 w-10"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </NavLink>
           )}
 
           <div className="">
