@@ -1,12 +1,9 @@
 import React from "react";
-import Header from "../../components/header/header-container";
-import Footer from "../../components/footer/footer-container";
 import OrderSummaryContainer from "../../components/order-summary/order-summary-container";
 
 const CategoryComponent = ({ data, categoryName, addToCart }) => {
   return (
     <div>
-      <Header />
       <main className="py-2">
         <h1 className="my-0 mx-auto w-11/12 font-mono text-xl md:text-3xl px-2 py-4">
           Best {categoryName} In Town
@@ -36,7 +33,6 @@ const CategoryComponent = ({ data, categoryName, addToCart }) => {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 };

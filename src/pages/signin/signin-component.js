@@ -1,15 +1,12 @@
 import React from "react";
 import { Formik } from "formik";
 import { NavLink } from "react-router-dom";
-import HeaderContainer from "../../components/header/header-container";
-import FooterContainer from "../../components/footer/footer-container";
 import { signInFormValidate } from "../../helpers/forms-validate";
 import TextField from "../../components/fields/text-field";
 import { RotateSpinner } from "react-spinners-kit";
 const SigninComponent = ({ initialValues, handleSubmit, loading }) => {
   return (
     <div>
-      <HeaderContainer />
       <section className="py-10 w-11/12 my-0 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-x-20">
           <div className="">
@@ -84,8 +81,6 @@ const SigninComponent = ({ initialValues, handleSubmit, loading }) => {
           </div>
         </div>
       </section>
-
-      <FooterContainer />
     </div>
   );
 };

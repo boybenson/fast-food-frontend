@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/footer/footer-container";
-import HeaderContainer from "../../components/header/header-container";
 const HomeComponent = () => {
   return (
     <div>
       <section className="bg-landingBgColor">
-        {/* heading */}
-        <HeaderContainer bg="bg-landingBgColor" />
         {/* landing image and writeup */}
         <section className="bg-landingBgColor w-10/12 my-0 mx-auto grid grid-cols-1 md:grid-cols-2 bottom-heading">
           <div className="flex flex-col justify-center gap-y-6 md:gap-y-10">
@@ -115,7 +111,6 @@ const HomeComponent = () => {
           </form>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

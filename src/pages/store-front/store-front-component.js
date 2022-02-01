@@ -1,14 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import FooterContainer from "../../components/footer/footer-container";
-import HeaderContainer from "../../components/header/header-container";
 import Slider from "../../components/slider/slider";
 import { categories } from "../../data/food";
 
 const StoreFrontComponent = () => {
   return (
     <div>
-      <HeaderContainer />
       <main>
         <div className="md:w-7/12 w-11/12 my-0 mx-auto">
           <Slider />
@@ -43,7 +40,6 @@ const StoreFrontComponent = () => {
           </div>
         </div>
       </main>
-      <FooterContainer />
     </div>
   );
 };

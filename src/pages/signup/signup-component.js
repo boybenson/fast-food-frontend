@@ -3,13 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { RotateSpinner } from "react-spinners-kit";
 import TextField from "../../components/fields/text-field";
-import Footer from "../../components/footer/footer-container";
-import HeaderContainer from "../../components/header/header-container";
 import { signUpFormValidate } from "../../helpers/forms-validate";
 const SignupComponent = ({ initialValues, handleSubmit, loading }) => {
   return (
     <div>
-      <HeaderContainer />
       <section className="py-10 w-11/12 my-0 mx-auto">
         <div className="grid grid-cols-1 justify-center md:grid-cols-2 items-center gap-x-20">
           <div className="">
@@ -109,7 +106,6 @@ const SignupComponent = ({ initialValues, handleSubmit, loading }) => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };

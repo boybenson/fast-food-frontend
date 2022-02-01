@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { NavLink } from "react-router-dom";
 
 const CartComponent = ({ cartItems, removeFromCart }) => {
   return (
@@ -14,7 +15,32 @@ const CartComponent = ({ cartItems, removeFromCart }) => {
           />
           <div>
             {cartItems.length === 0 ? (
-              <div>No items In cart</div>
+              <div>
+                <div>
+                  <p className="py-4 text-gray-800 text-xl">
+                    Opps!🥺 Nothing in Cart Yet.
+                  </p>
+                  <NavLink to="/en">
+                    <p className="py-2 text-primary text-xl flex items-center gap-x-2">
+                      Continue Shopping
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </p>
+                  </NavLink>
+                </div>
+              </div>
             ) : (
               <div>
                 {cartItems.map((item, index) => (
