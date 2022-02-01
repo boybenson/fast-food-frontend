@@ -1,10 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import CartComponent from "./cart-component";
+import { handleRemoveFromCart } from "../../helpers/cart";
 
 const CartContainer = () => {
+  const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-  return <CartComponent cartItems={cartItems} />;
+
+  const removeFromCart = (food) => {
+    handleRemoveFromCart(food, dispatch);
+  };
+  return (
+    <CartComponent cartItems={cartItems} removeFromCart={removeFromCart} />
+  );
 };
 
 export default React.memo(CartContainer);

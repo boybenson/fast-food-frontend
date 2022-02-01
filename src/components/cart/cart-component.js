@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 
-const CartComponent = ({ cartItems }) => {
+const CartComponent = ({ cartItems, removeFromCart }) => {
   return (
     <Fragment>
       <div>
         <div>
           <div className="flex justify-between pb-7">
             <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-            <h2 className="font-semibold text-2xl">3 Items</h2>
+            <h2 className="font-semibold text-2xl">{cartItems.length} Items</h2>
           </div>
           <hr
             style={{ color: "#EA421A", backgroundColor: "#EA421A", height: 2 }}
@@ -57,10 +57,11 @@ const CartComponent = ({ cartItems }) => {
                       <div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          className="h-6 w-6"
+                          className="h-6 w-6 cursor-pointer"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
+                          onClick={() => removeFromCart(item)}
                         >
                           <path
                             strokeLinecap="round"
