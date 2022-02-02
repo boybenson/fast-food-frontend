@@ -2,6 +2,7 @@ import React from "react";
 import OrderSummaryContainer from "../../components/order-summary/order-summary-container";
 
 const CategoryComponent = ({ data, categoryName, addToCart }) => {
+  console.log("foods", data);
   return (
     <div>
       <main className="py-2">

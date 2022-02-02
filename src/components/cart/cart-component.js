@@ -1,7 +1,12 @@
 import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
-const CartComponent = ({ cartItems, removeFromCart }) => {
+const CartComponent = ({
+  cartItems,
+  removeFromCart,
+  increaseQty,
+  decreaseQty,
+}) => {
   return (
     <Fragment>
       <div>
@@ -66,13 +71,43 @@ const CartComponent = ({ cartItems, removeFromCart }) => {
                     </div>
                     <div className="flex justify-center items-center">
                       <div className="pr-8 flex">
-                        <span className="font-semibold">-</span>
+                        <button onClick={() => decreaseQty(item)}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </button>
                         <input
                           type="text"
                           className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
-                          defaultValue={1}
+                          value={item.qtyToBuy}
                         />
-                        <span className="font-semibold">+</span>
+                        <button onClick={() => increaseQty(item)}>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-6 w-6"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                          </svg>
+                        </button>
                       </div>
                       <div className="pr-8">
                         <span className="text-xs font-medium">GH₵ 10.50</span>

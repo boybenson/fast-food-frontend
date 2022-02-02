@@ -1,7 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CartComponent from "./cart-component";
-import { handleRemoveFromCart } from "../../helpers/cart";
+import {
+  handleDecreaseQty,
+  handleIncreaseQty,
+  handleRemoveFromCart,
+} from "../../helpers/cart";
 
 const CartContainer = () => {
   const dispatch = useDispatch();
@@ -10,8 +14,22 @@ const CartContainer = () => {
   const removeFromCart = (food) => {
     handleRemoveFromCart(food, dispatch);
   };
+
+  const increaseQty = (food) => {
+    handleIncreaseQty(food, dispatch);
+  };
+
+  const decreaseQty = (food) => {
+    handleDecreaseQty(food, dispatch);
+  };
+
   return (
-    <CartComponent cartItems={cartItems} removeFromCart={removeFromCart} />
+    <CartComponent
+      cartItems={cartItems}
+      removeFromCart={removeFromCart}
+      increaseQty={increaseQty}
+      decreaseQty={decreaseQty}
+    />
   );
 };
 

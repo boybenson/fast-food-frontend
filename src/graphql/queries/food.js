@@ -10,6 +10,7 @@ export const GET_CATEGORY = gql`
       image
       category
       cookingDuration
+      qtyToBuy
     }
   }
 `;

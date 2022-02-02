@@ -1,5 +1,10 @@
 import toast from "react-hot-toast";
-import { addToCart, removeFromCart } from "../redux/cart/cart-slice";
+import {
+  addToCart,
+  decreaseQty,
+  increaseQty,
+  removeFromCart,
+} from "../redux/cart/cart-slice";
 
 const handleAddToCart = (food, dispatch, cartItems) => {
   const isInCart = cartItems.some((item) => item.id === food.id);
@@ -14,4 +19,18 @@ const handleAddToCart = (food, dispatch, cartItems) => {
 const handleRemoveFromCart = (food, dispatch) => {
   dispatch(removeFromCart(food));
 };
-export { handleAddToCart, handleRemoveFromCart };
+
+const handleIncreaseQty = (food, dispatch) => {
+  dispatch(increaseQty(food));
+};
+
+const handleDecreaseQty = (food, dispatch) => {
+  dispatch(decreaseQty(food));
+};
+
+export {
+  handleAddToCart,
+  handleRemoveFromCart,
+  handleIncreaseQty,
+  handleDecreaseQty,
+};
