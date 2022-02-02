@@ -1,8 +1,14 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import PersonalInfoComponent from "./personal-info-component";
 
 const PersonalInfoContainer = () => {
-  return <PersonalInfoComponent />;
+  const { userInfo } = useSelector((state) => state.user);
+
+  const initialValues = userInfo;
+  return (
+    <PersonalInfoComponent userInfo={userInfo} initialValues={initialValues} />
+  );
 };
 
 export default PersonalInfoContainer;

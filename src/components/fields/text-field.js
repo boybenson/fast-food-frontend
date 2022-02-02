@@ -10,6 +10,7 @@ const TextField = ({
   touched,
   errors,
   className,
+  disabled,
 }) => {
   return (
     <div>
@@ -23,6 +24,7 @@ const TextField = ({
         className={
           className ?? "border border-gray-600 w-full py-2 px-4 rounded-md"
         }
+        disabled={disabled ?? false}
       />
       {touched[name] && errors[name] ? (
         <p className="text-red-400">{errors[name]}</p>

@@ -8,9 +8,9 @@ const AccountComponent = ({ accountLinks }) => {
         <h1 className="w-9/12 my-0 mx-auto py-4 text-2xl font-mono font-semibold">
           My Accounts
         </h1>
-        <div className="grid grid-cols-3 w-9/12 my-0 mx-auto shadow-2xl py-4 rounded-xl">
+        <div className="grid grid-cols-3 w-9/12 my-0 mx-auto shadow-2xl py-8 rounded-xl">
           <div className="col-span-1 border-r-2 py-4">
-            <div>
+            <div className="account-page-tabs">
               {accountLinks.map((link, index) => (
                 <NavLink
                   to={link.path}
@@ -22,12 +22,18 @@ const AccountComponent = ({ accountLinks }) => {
               ))}
             </div>
           </div>
-          <div className="col-span-2">
-            <Routes>
-              {accountLinks.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
-              ))}
-            </Routes>
+          <div className="col-span-2 px-4">
+            <div className="account-nav-links">
+              <Routes>
+                {accountLinks.map((route, index) => (
+                  <Route
+                    key={index}
+                    path={route.path}
+                    element={route.element}
+                  />
+                ))}
+              </Routes>
+            </div>
           </div>
         </div>
       </main>
