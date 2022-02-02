@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 
 const AccountComponent = ({ accountLinks }) => {
   return (
@@ -22,7 +22,13 @@ const AccountComponent = ({ accountLinks }) => {
               ))}
             </div>
           </div>
-          <div className="col-span-2"></div>
+          <div className="col-span-2">
+            <Routes>
+              {accountLinks.map((route, index) => (
+                <Route key={index} path={route.path} element={route.element} />
+              ))}
+            </Routes>
+          </div>
         </div>
       </main>
     </div>

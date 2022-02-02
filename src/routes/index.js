@@ -38,7 +38,7 @@ export const unProtectedRoutes = [
     protected: false,
   },
   {
-    path: "/en/account",
+    path: "/en/account/*",
     element: <Account />,
     protected: true,
   },
