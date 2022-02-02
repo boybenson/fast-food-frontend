@@ -28,9 +28,18 @@ const handleDecreaseQty = (food, dispatch) => {
   dispatch(decreaseQty(food));
 };
 
+const calcTotalPrice = (cartItems) => {
+  return Number(
+    cartItems
+      .reduce((acc, item) => acc + item.qtyToBuy * item.price, 10)
+      .toFixed(2)
+  );
+};
+
 export {
   handleAddToCart,
   handleRemoveFromCart,
   handleIncreaseQty,
   handleDecreaseQty,
+  calcTotalPrice,
 };

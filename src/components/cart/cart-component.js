@@ -91,6 +91,7 @@ const CartComponent = ({
                           type="text"
                           className="focus:outline-none bg-gray-100 border h-6 w-8 rounded text-sm px-2 mx-2"
                           value={item.qtyToBuy}
+                          readOnly
                         />
                         <button onClick={() => increaseQty(item)}>
                           <svg
@@ -110,7 +111,9 @@ const CartComponent = ({
                         </button>
                       </div>
                       <div className="pr-8">
-                        <span className="text-xs font-medium">GH₵ 10.50</span>
+                        <span className="text-xs font-medium">
+                          GH₵ {(item.qtyToBuy * item.price).toFixed(2)}
+                        </span>
                       </div>
                       <div>
                         <i className="fa fa-close text-xs font-medium"></i>

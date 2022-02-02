@@ -1,10 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { calcTotalPrice } from "../../helpers/cart";
 import OrderSummaryComponent from "./order-summary-component";
 
 const OrderSummaryContainer = () => {
   const { cartItems } = useSelector((state) => state.cart);
-  return <OrderSummaryComponent cartItems={cartItems} />;
+  const totalPrice = calcTotalPrice(cartItems);
+  return (
+    <OrderSummaryComponent cartItems={cartItems} totalPrice={totalPrice} />
+  );
 };
 
 export default OrderSummaryContainer;
