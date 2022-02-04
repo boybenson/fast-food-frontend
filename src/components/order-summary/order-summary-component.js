@@ -1,6 +1,14 @@
 import React from "react";
+import { Formik } from "formik";
+import TextField from "../fields/text-field";
+import { checkoutFormValidate } from "../../helpers/forms-validate";
 
-const OrderSummaryComponent = ({ cartItems, totalPrice }) => {
+const OrderSummaryComponent = ({
+  cartItems,
+  totalPrice,
+  initialValues,
+  handleSubmit,
+}) => {
   return (
     <div className="bg-gray-200 rounded-lg py-2 my-2">
       <div className="px-4">
@@ -33,32 +41,73 @@ const OrderSummaryComponent = ({ cartItems, totalPrice }) => {
           <h3> GH₵ 00.00</h3>
         </div>
 
-        <div className="py-2">
-          <input
-            type="text"
-            className="w-full py-2 px-2 rounded-lg"
-            placeholder="Enter Location . . ."
-          />
-        </div>
+        <Formik
+          initialValues={initialValues}
+          validate={checkoutFormValidate}
+          onSubmit={(values) => {
+            handleSubmit(values);
+          }}
+        >
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
+          }) => (
+            <form className="" onSubmit={handleSubmit}>
+              <div className="py-2">
+                <TextField
+                  type="text"
+                  placeholder="Enter Location..."
+                  name="location"
+                  value={values.location}
+                  onBlur={handleBlur}
+                  className="w-full py-2 px-2 rounded-lg"
+                  onChange={handleChange}
+                  touched={touched}
+                  errors={errors}
+                />
+              </div>
 
-        <div className="py-2">
-          <select className="w-full py-2 px-2 rounded-lg">
-            <option>Select Payment Method</option>
-            <option>Cash On Delivery</option>
-            <option>Mobile Money</option>
-          </select>
-        </div>
+              <div className="py-2">
+                <select
+                  className="w-full py-2 px-2 rounded-lg"
+                  value={values.paymentMethod}
+                  name="paymentMethod"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  errors={errors}
+                  touched={touched}
+                >
+                  <option label="Select Payment Method" value="" />
+                  <option value="cash_on_delivery" label="Cash On Delivery" />
+                  <option value="momo" label="Mobile Money" />
+                </select>
+                {errors.paymentMethod && touched.paymentMethod && (
+                  <p className="text-red-500">{errors.paymentMethod}</p>
+                )}
+              </div>
 
-        <div className="flex justify-between font-bold text-gray-500 sm py-2">
-          <h3 className=" ">Total Cost</h3>
-          <h3> ₵ {totalPrice}</h3>
-        </div>
+              <div className="flex justify-between font-bold text-gray-500 sm py-2">
+                <h3 className=" ">Total Cost</h3>
+                <h3>₵ {totalPrice}</h3>
+              </div>
 
-        <div className="py-2">
-          <button className="bg-gray-800 w-full py-2 text-white rounded-lg">
-            Checkout
-          </button>
-        </div>
+              <div className="py-2">
+                <button
+                  className="bg-gray-800 w-full py-2 text-white rounded-lg cursor-pointer"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  Checkout
+                </button>
+              </div>
+            </form>
+          )}
+        </Formik>
       </div>
     </div>
   );

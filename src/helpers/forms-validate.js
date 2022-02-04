@@ -29,3 +29,14 @@ export const signUpFormValidate = (values) => {
   }
   return errors;
 };
+
+export const checkoutFormValidate = (values) => {
+  const errors = {};
+  if (!values.location) {
+    errors.location = "Location is Required!";
+  }
+  if (!values.paymentMethod) {
+    errors.paymentMethod = "Please select a payment method!";
+  }
+  return errors;
+};
