@@ -47,7 +47,7 @@ const HeaderComponent = ({ userInfo, cartItems, bg, handleLogout }) => {
           <div className="hidden md:block">
             <div className="flex gap-x-4 items-center">
               <NavLink
-                to="/en/account"
+                to="/en/account/personal-info"
                 className="py-2 px-2 rounded-md flex gap-x-2"
               >
                 <p>My Account</p>

@@ -16,7 +16,7 @@ const CategoryComponent = ({ data, categoryName, addToCart }) => {
                 <img className="w-full" src={food.image} alt="img" />
                 <div className="px -6 py-4">
                   <div className="font-bold text-xl mb-2">{food.name}</div>
-                  <p>Price : GHC {food.price}</p>
+                  <p>Price : GH₵ {food.price}</p>
                 </div>
                 <div>
                   <button

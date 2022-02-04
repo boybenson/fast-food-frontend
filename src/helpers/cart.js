@@ -31,7 +31,7 @@ const handleDecreaseQty = (food, dispatch) => {
 const calcTotalPrice = (cartItems) => {
   return Number(
     cartItems
-      .reduce((acc, item) => acc + item.qtyToBuy * item.price, 10)
+      .reduce((acc, item) => acc + item.qtyToBuy * item.price, 0)
       .toFixed(2)
   );
 };

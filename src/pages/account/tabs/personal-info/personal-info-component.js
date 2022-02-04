@@ -35,19 +35,6 @@ const PersonalInfoComponent = ({ userInfo, initialValues, loading }) => {
                 />
               </div>
               <div className="my-4">
-                <h6 className="py-2 text-gray-600 font-semibold">Role :</h6>
-                <TextField
-                  name="role"
-                  value={values.role}
-                  onBlur={handleBlur}
-                  onChange={handleChange}
-                  touched={touched}
-                  errors={errors}
-                  disabled
-                  className="border border-gray-600 bg-gray-300 w-full py-2 px-4 rounded-md"
-                />
-              </div>
-              <div className="my-4">
                 <h6 className="py-2 text-gray-600 font-semibold">
                   Email Address:
                 </h6>

@@ -11,4 +11,4 @@ const OrderSummaryContainer = () => {
   );
 };
 
-export default OrderSummaryContainer;
+export default React.memo(OrderSummaryContainer);

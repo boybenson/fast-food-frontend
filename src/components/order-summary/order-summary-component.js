@@ -26,11 +26,11 @@ const OrderSummaryComponent = ({ cartItems, totalPrice }) => {
         />
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Items {cartItems.length}</h3>
-          <h3>GHC 415.00</h3>
+          <h3> GH₵ {totalPrice}</h3>
         </div>
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Shipping Cost</h3>
-          <h3>GHC 00.00</h3>
+          <h3> GH₵ 00.00</h3>
         </div>
 
         <div className="py-2">
@@ -51,7 +51,7 @@ const OrderSummaryComponent = ({ cartItems, totalPrice }) => {
 
         <div className="flex justify-between font-bold text-gray-500 sm py-2">
           <h3 className=" ">Total Cost</h3>
-          <h3>GHC {totalPrice}</h3>
+          <h3> ₵ {totalPrice}</h3>
         </div>
 
         <div className="py-2">
