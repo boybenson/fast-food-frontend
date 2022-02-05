@@ -6,10 +6,13 @@ import OrderSummaryComponent from "./order-summary-component";
 import { CREATE_ORDER } from "../../graphql/mutations/orders";
 import toast from "react-hot-toast";
 import { clearCart } from "../../redux/cart/cart-slice";
+import { useNavigate } from "react-router-dom";
 
 const OrderSummaryContainer = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
+  const { userInfo } = useSelector((state) => state.user);
   const [createOrder, { loading }] = useMutation(CREATE_ORDER);
   const totalPrice = calcTotalPrice(cartItems);
 
@@ -36,25 +39,33 @@ const OrderSummaryContainer = () => {
   };
 
   const handleSubmit = (values) => {
-    if (cartItems.length === 0) {
-      toast.error("Opps!🥺 No Items in cart!");
+    if (!userInfo) {
+      navigate("/auth/signin");
+      toast.error("please login!");
     } else {
-      createOrder({
-        variables: {
-          content: {
-            totalPrice,
-            address: values.location,
-            paymentMethod: values.paymentMethod,
+      if (cartItems.length === 0) {
+        toast.error("Opps!🥺 No Items in cart!");
+      } else {
+        createOrder({
+          variables: {
+            content: {
+              totalPrice,
+              address: values.location,
+              paymentMethod: values.paymentMethod,
+            },
+            foods: orderedItems(),
           },
-          foods: orderedItems(),
-        },
-        onCompleted: (data) => {
-          dispatch(clearCart());
-        },
-        onError: (err) => {
-          toast.error(err?.message);
-        },
-      });
+          onCompleted: (data) => {
+            dispatch(clearCart());
+            toast.success(
+              "🎉🎉🎉🍟Congrats!!, Kindly wait patiently for your delicious meaal!"
+            );
+          },
+          onError: (err) => {
+            toast.error(err?.message);
+          },
+        });
+      }
     }
   };
 

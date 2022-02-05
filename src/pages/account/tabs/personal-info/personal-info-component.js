@@ -9,7 +9,7 @@ const PersonalInfoComponent = ({ userInfo, initialValues, loading }) => {
       <h3 className="font-semibold text-xl text-gray-500">
         My Personal Information
       </h3>
-      <div className="py-4">
+      <div className="py-2 md:py-4">
         <Formik initialValues={initialValues}>
           {({
             values,
@@ -21,7 +21,7 @@ const PersonalInfoComponent = ({ userInfo, initialValues, loading }) => {
             isSubmitting,
           }) => (
             <form className="w-full md:w-11/12" onSubmit={handleSubmit}>
-              <div className="my-4">
+              <div className="md:my-4">
                 <h6 className="py-2 text-gray-600 font-semibold">User ID:</h6>
                 <TextField
                   name="id"
