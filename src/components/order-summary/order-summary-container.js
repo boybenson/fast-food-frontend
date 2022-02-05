@@ -1,14 +1,16 @@
 import React from "react";
 import { useMutation } from "@apollo/client";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { calcTotalPrice } from "../../helpers/cart";
 import OrderSummaryComponent from "./order-summary-component";
 import { CREATE_ORDER } from "../../graphql/mutations/orders";
 import toast from "react-hot-toast";
+import { clearCart } from "../../redux/cart/cart-slice";
 
 const OrderSummaryContainer = () => {
+  const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.cart);
-  const [createOrder, { loading, error, data }] = useMutation(CREATE_ORDER);
+  const [createOrder, { loading }] = useMutation(CREATE_ORDER);
   const totalPrice = calcTotalPrice(cartItems);
 
   const initialValues = {
@@ -47,9 +49,11 @@ const OrderSummaryContainer = () => {
           foods: orderedItems(),
         },
         onCompleted: (data) => {
-          console.log("order created", data);
+          dispatch(clearCart());
         },
-        onError: (err) => {},
+        onError: (err) => {
+          toast.error(err?.message);
+        },
       });
     }
   };
