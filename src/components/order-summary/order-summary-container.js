@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import { calcTotalPrice } from "../../helpers/cart";
 import OrderSummaryComponent from "./order-summary-component";
 import { CREATE_ORDER } from "../../graphql/mutations/orders";
+import toast from "react-hot-toast";
 
 const OrderSummaryContainer = () => {
   const { cartItems } = useSelector((state) => state.cart);
-  const [createOrder, { loading }] = useMutation(CREATE_ORDER);
+  const [createOrder, { loading, error, data }] = useMutation(CREATE_ORDER);
   const totalPrice = calcTotalPrice(cartItems);
 
   const initialValues = {
@@ -33,20 +34,24 @@ const OrderSummaryContainer = () => {
   };
 
   const handleSubmit = (values) => {
-    createOrder({
-      variables: {
-        content: {
-          totalPrice,
-          address: values.location,
-          paymentMethod: values.paymentMethod,
+    if (cartItems.length === 0) {
+      toast.error("Opps!🥺 No Items in cart!");
+    } else {
+      createOrder({
+        variables: {
+          content: {
+            totalPrice,
+            address: values.location,
+            paymentMethod: values.paymentMethod,
+          },
+          foods: orderedItems(),
         },
-        foods: orderedItems(),
-      },
-      onCompleted: (data) => {
-        console.log("order created", data);
-      },
-      onError: (err) => {},
-    });
+        onCompleted: (data) => {
+          console.log("order created", data);
+        },
+        onError: (err) => {},
+      });
+    }
   };
 
   return (

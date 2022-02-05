@@ -20,7 +20,7 @@ const PersonalInfoComponent = ({ userInfo, initialValues, loading }) => {
             handleSubmit,
             isSubmitting,
           }) => (
-            <form className="w-11/12" onSubmit={handleSubmit}>
+            <form className="w-full md:w-11/12" onSubmit={handleSubmit}>
               <div className="my-4">
                 <h6 className="py-2 text-gray-600 font-semibold">User ID:</h6>
                 <TextField

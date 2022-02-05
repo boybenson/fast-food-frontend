@@ -127,7 +127,7 @@ const HeaderComponent = ({ userInfo, cartItems, bg, handleLogout }) => {
           )}
 
           {userInfo && (
-            <NavLink to="/en/account">
+            <NavLink to="/en/account/personal-info">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-10 w-10"

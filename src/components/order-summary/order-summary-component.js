@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
+import { RotateSpinner } from "react-spinners-kit";
 import TextField from "../fields/text-field";
 import { checkoutFormValidate } from "../../helpers/forms-validate";
 
@@ -8,6 +9,7 @@ const OrderSummaryComponent = ({
   totalPrice,
   initialValues,
   handleSubmit,
+  loading,
 }) => {
   return (
     <div className="bg-gray-200 rounded-lg py-2 my-2">
@@ -98,11 +100,18 @@ const OrderSummaryComponent = ({
 
               <div className="py-2">
                 <button
-                  className="bg-gray-800 w-full py-2 text-white rounded-lg cursor-pointer"
+                  className="bg-gray-800 w-full py-2 text-white rounded-lg cursor-pointer text-center flex justify-center"
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Checkout
+                  {loading ? (
+                    <div className="flex justify-center gap-x-4">
+                      <RotateSpinner size={25} color="white" />
+                      <p>Processing...</p>
+                    </div>
+                  ) : (
+                    <p>checkout</p>
+                  )}
                 </button>
               </div>
             </form>
