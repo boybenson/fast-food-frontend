@@ -8,8 +8,8 @@ const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
         <h1 className="w-11/12 md:w-9/12 my-0 mx-auto py-4 text-2xl font-mono font-semibold">
           My Accounts
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 w-11/12 md:w-9/12 my-0 mx-auto shadow-2xl md:py-8 rounded-xl">
-          <div className="col-span-1 border-r-2 py-0 md:py-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 w-11/12 md:w-9/12 my-0 mx-auto shadow-2xl md:py-8 rounded-xl px-4">
+          <div className="col-span-1 md:border-r-2 py-0 md:py-4">
             <div className="account-page-tabs flex flex-wrap md:block mb-4">
               {accountLinks.map((link, index) => (
                 <NavLink
@@ -22,8 +22,8 @@ const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
               ))}
             </div>
           </div>
-          <div className="col-span-2 px-4">
-            <div className="account-nav-links">
+          <div className="col-span-2 px-4 overflow-auto account-links-display-section">
+            <div className="account-nav-links ">
               <Routes>
                 {accountLinks.map((route, index) => {
                   return (

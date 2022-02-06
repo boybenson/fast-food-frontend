@@ -2,10 +2,12 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { RotateSpinner } from "react-spinners-kit";
 
-const OrdersComponent = ({ loading, orders }) => {
+const OrdersComponent = ({ loading, orders, userInfo }) => {
   return (
     <div>
-      <h3 className="font-semibold text-xl text-gray-500">All Orders</h3>
+      <h3 className="font-semibold text-xl text-gray-500">
+        {userInfo.role === "customer" ? "My Orders" : "All Orders"}
+      </h3>
       <div className="py-2">
         <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
           <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
@@ -48,7 +50,7 @@ const OrdersComponent = ({ loading, orders }) => {
                               aria-hidden
                               className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                             ></span>
-                            <span className="relative">Delivered</span>
+                            <span className="relative">Delivered🎉🚀</span>
                           </span>
                         ) : (
                           <span className="relative inline-block px-4 py-2 font-semibold text-red-900 leading-tight">
@@ -56,7 +58,7 @@ const OrdersComponent = ({ loading, orders }) => {
                               aria-hidden
                               className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
                             ></span>
-                            <span className="relative">Processing</span>
+                            <span className="relative">Processing😁</span>
                           </span>
                         )}
                       </td>

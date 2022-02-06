@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
 }
 
 .top-heading {
@@ -17,6 +18,24 @@ div.account-page-tabs a.active {
   background-color: #ea421a;
   color: white;
 }
+
+.account-links-display-section {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
 .carousel img {
   height: 300px;
   object-fit: cover;

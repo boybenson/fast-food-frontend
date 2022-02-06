@@ -20,3 +20,25 @@ export const GET_ORDERS = gql`
     }
   }
 `;
+
+export const GET_ORDER = gql`
+  query ExampleQuery($orderId: String!) {
+    getOrder(orderId: $orderId) {
+      user {
+        email
+        phone
+      }
+      id
+      address
+      totalPrice
+      isDelivered
+      foods {
+        name
+        price
+        qtyToBuy
+        image
+      }
+      paymentMethod
+    }
+  }
+`;
