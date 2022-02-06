@@ -61,7 +61,7 @@ const OrdersComponent = ({ loading, orders }) => {
                         )}
                       </td>
                       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <NavLink to="/">
+                        <NavLink to="1">
                           <p className="text-primary whitespace-no-wrap underline cursor-pointer">
                             Details
                           </p>

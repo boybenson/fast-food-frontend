@@ -5,6 +5,7 @@ import Orders from "./tabs/orders/orders-container";
 import Settings from "./tabs/settings/settings-container";
 // import WishList from "./tabs/wish-list/wish-list-container";
 import Password from "./tabs/password/password-container";
+import OrderDetailsContainer from "./tabs/order-details/order-details-container";
 
 const AccountContainer = () => {
   const accountLinks = [
@@ -121,7 +122,12 @@ const AccountContainer = () => {
     // },
   ];
 
-  return <AccountComponent accountLinks={accountLinks} />;
+  return (
+    <AccountComponent
+      accountLinks={accountLinks}
+      OrderDetailsContainer={<OrderDetailsContainer />}
+    />
+  );
 };
 
 export default React.memo(AccountContainer);

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 
-const AccountComponent = ({ accountLinks }) => {
+const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
   return (
     <div>
       <main className="py-4 ">
@@ -25,13 +25,23 @@ const AccountComponent = ({ accountLinks }) => {
           <div className="col-span-2 px-4">
             <div className="account-nav-links">
               <Routes>
-                {accountLinks.map((route, index) => (
-                  <Route
-                    key={index}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
+                {accountLinks.map((route, index) => {
+                  return route.path === "orders" ? (
+                    <Route
+                      key={index}
+                      path={route.path}
+                      element={route.element}
+                    >
+                      <Route path="1" element={OrderDetailsContainer} />
+                    </Route>
+                  ) : (
+                    <Route
+                      key={index}
+                      path={route.path}
+                      element={route.element}
+                    />
+                  );
+                })}
               </Routes>
             </div>
           </div>
