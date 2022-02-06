@@ -1,8 +1,8 @@
 import { useMutation } from "@apollo/client";
-import React, { useEffect } from "react";
+import React from "react";
 import toast from "react-hot-toast";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { SIGNIN } from "../../graphql/mutations/auth.js";
 import { signin, signinError } from "../../redux/auth/signin.js";
@@ -11,11 +11,10 @@ import SigninComponent from "./signin-component.js";
 const SigninContainer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { userInfo } = useSelector((state) => state.user);
-
+  let location = useLocation();
   const [signIn, { error, loading }] = useMutation(SIGNIN);
-
   const initialValues = { email: "", password: "" };
+  let comingFrom = location.state?.from?.pathname || "/";
 
   const handleSubmit = (values) => {
     signIn({
@@ -23,7 +22,7 @@ const SigninContainer = () => {
       onCompleted: (data) => {
         localStorage.setItem("userInfo", JSON.stringify(data.signIn));
         dispatch(signin(data.signIn));
-        navigate("/en", { replace: true });
+        navigate(`${comingFrom}`, { replace: true });
         toast.success("login successful");
       },
       onError: (err) => {
@@ -32,10 +31,6 @@ const SigninContainer = () => {
       },
     });
   };
-
-  useEffect(() => {
-    userInfo ? navigate("/en") : console.log("null");
-  });
 
   return (
     <SigninComponent

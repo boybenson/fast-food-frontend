@@ -6,11 +6,12 @@ import OrderSummaryComponent from "./order-summary-component";
 import { CREATE_ORDER } from "../../graphql/mutations/orders";
 import toast from "react-hot-toast";
 import { clearCart } from "../../redux/cart/cart-slice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const OrderSummaryContainer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  let location = useLocation();
   const { cartItems } = useSelector((state) => state.cart);
   const { userInfo } = useSelector((state) => state.user);
   const [createOrder, { loading }] = useMutation(CREATE_ORDER);
@@ -40,7 +41,7 @@ const OrderSummaryContainer = () => {
 
   const handleSubmit = (values) => {
     if (!userInfo) {
-      navigate("/auth/signin");
+      navigate("/auth/signin", { state: { from: location } });
       toast.error("please login!");
     } else {
       if (cartItems.length === 0) {

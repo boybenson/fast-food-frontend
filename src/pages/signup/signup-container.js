@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import toast from "react-hot-toast";
 import { useMutation } from "@apollo/client";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { SIGNUP } from "../../graphql/mutations/auth.js";
 import { signin, signinError } from "../../redux/auth/signin.js";
@@ -10,7 +10,6 @@ import SignupComponent from "./signup-component.js";
 const SignupContainer = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { userInfo } = useSelector((state) => state.user);
 
   const [signUp, { error, loading }] = useMutation(SIGNUP);
   const initialValues = { email: "", password: "", phone: "" };
@@ -33,10 +32,6 @@ const SignupContainer = () => {
       },
     });
   };
-
-  useEffect(() => {
-    userInfo ? navigate("/en") : console.log("null");
-  });
 
   return (
     <SignupComponent
