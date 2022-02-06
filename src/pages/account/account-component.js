@@ -26,15 +26,7 @@ const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
             <div className="account-nav-links">
               <Routes>
                 {accountLinks.map((route, index) => {
-                  return route.path === "orders" ? (
-                    <Route
-                      key={index}
-                      path={route.path}
-                      element={route.element}
-                    >
-                      <Route path="1" element={OrderDetailsContainer} />
-                    </Route>
-                  ) : (
+                  return (
                     <Route
                       key={index}
                       path={route.path}
@@ -42,6 +34,7 @@ const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
                     />
                   );
                 })}
+                <Route path="orders/:orderId" element={OrderDetailsContainer} />
               </Routes>
             </div>
           </div>
