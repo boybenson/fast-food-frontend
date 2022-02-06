@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { unProtectedRoutes } from "./routes";
+import { appRoutes } from "./routes";
 import MainLayout from "./layouts/index";
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <MainLayout>
           <Routes>
-            {unProtectedRoutes.map(({ path, element }, index) => {
+            {appRoutes.map(({ path, element }, index) => {
               return <Route path={path} element={element} key={index} />;
             })}
           </Routes>

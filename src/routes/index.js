@@ -10,7 +10,7 @@ const Category = lazy(() => import("../pages/category/category-container"));
 const Cart = lazy(() => import("../pages/cart-screen/cart-screen-container"));
 const Account = lazy(() => import("../pages/account/account-container"));
 
-export const unProtectedRoutes = [
+export const appRoutes = [
   { path: "/", element: <Home />, protected: false },
   {
     path: "/auth/signin",

@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AccountComponent from "./account-component";
 import PersonalInfo from "./tabs/personal-info/personal-info-container";
 import Orders from "./tabs/orders/orders-container";
 import Settings from "./tabs/settings/settings-container";
 // import WishList from "./tabs/wish-list/wish-list-container";
 import Password from "./tabs/password/password-container";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const AccountContainer = () => {
+  const navigate = useNavigate();
+  const { userInfo } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    !userInfo ? navigate("/auth/signin") : console.log("null");
+  });
+
   const accountLinks = [
     {
       label: "Personal Info",
