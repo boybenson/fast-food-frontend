@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "../../redux/auth/signin";
 import HeaderComponent from "./header-component";
 
-const HeaderContainer = ({ bg }) => {
+const HeaderContainer = ({ bg, showDropDown, toggleNav }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,6 +23,8 @@ const HeaderContainer = ({ bg }) => {
       cartItems={cartItems}
       bg={bg}
       handleLogout={handleLogout}
+      showDropDown={showDropDown}
+      toggleNav={toggleNav}
     />
   );
 };

@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
@@ -7,10 +7,19 @@ import MainLayout from "./layouts/index";
 import RequireAuth from "./routes/protected-route";
 
 const App = () => {
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  let toggleNav = () => {
+    setShowDropDown(!showDropDown);
+  };
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
-        <MainLayout>
+        <MainLayout
+          showDropDown={showDropDown}
+          setShowDropDown={setShowDropDown}
+          toggleNav={toggleNav}
+        >
           <Routes>
             {appRoutes.map(({ path, element, protected: protect }, index) => {
               return !protect ? (
