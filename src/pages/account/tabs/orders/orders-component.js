@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { RotateSpinner } from "react-spinners-kit";
 
-const OrdersComponent = ({ loading, orders, userInfo }) => {
+const OrdersComponent = ({ loading, orders, userInfo, error }) => {
   return (
     <div>
       <h3 className="font-semibold text-xl text-gray-500">
@@ -76,6 +76,17 @@ const OrdersComponent = ({ loading, orders, userInfo }) => {
             {loading && (
               <div className="flex justify-center py-8">
                 <RotateSpinner size={45} color="red" />
+              </div>
+            )}
+            {error && (
+              <div className="flex justify-center py-8">
+                <span className="relative inline-block px-4 py-2 font-semibold text-red-900 leading-tight">
+                  <span
+                    aria-hidden
+                    className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+                  ></span>
+                  <span className="relative">{error?.message}</span>
+                </span>
               </div>
             )}
           </div>

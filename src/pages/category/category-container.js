@@ -14,7 +14,7 @@ const CategoryContainer = () => {
   const { categoryName } = params;
   const { loading, error, data } = useQuery(GET_CATEGORY, {
     variables: { categoryName },
-    pollInterval: 100,
+    pollInterval: 500,
   });
 
   const addToCart = (food) => {

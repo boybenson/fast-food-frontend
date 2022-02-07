@@ -19,6 +19,10 @@ div.account-page-tabs a.active {
   color: white;
 }
 
+div.dropdown-tabs a.active {
+  color: #ea421a;
+}
+
 .account-links-display-section {
   height: 300px;
   overflow-y: scroll;

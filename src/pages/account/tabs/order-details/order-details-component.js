@@ -42,7 +42,7 @@ const OrderDetailsComponent = ({ data, handleGoBack }) => {
           Email: {data?.user?.email}
         </p>
         <p className="py-2 font-serif text-lg text-gray-500">
-          Phone: {data?.address}
+          Address: {data?.address}
         </p>
         {data?.isDelivered ? (
           <span className="relative inline-block px-4 py-2 font-semibold text-green-900 leading-tight w-full">
@@ -77,9 +77,10 @@ const OrderDetailsComponent = ({ data, handleGoBack }) => {
         <h2 className="text-2xl md:text-3xl font-mono text-gray-600">
           Ordered Items
         </h2>
+        {data?.foods.map((food, index) => (
+          <h1 key={index}>{food.name}</h1>
+        ))}
       </div>
-
-      {/* problem here */}
     </div>
   );
 };

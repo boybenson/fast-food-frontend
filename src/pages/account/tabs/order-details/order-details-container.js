@@ -11,7 +11,7 @@ const OrderDetailsContainer = () => {
     variables: {
       orderId: params?.orderId,
     },
-    pollInterval: 100,
+    pollInterval: 500,
   });
 
   let handleGoBack = () => {

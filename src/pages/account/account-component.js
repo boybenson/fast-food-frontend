@@ -10,7 +10,7 @@ const AccountComponent = ({ accountLinks, OrderDetailsContainer }) => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3 w-11/12 md:w-9/12 my-0 mx-auto shadow-2xl md:py-8 rounded-xl px-4">
           <div className="col-span-1 md:border-r-2 py-0 md:py-4">
-            <div className="account-page-tabs flex flex-wrap md:block mb-4">
+            <div className="account-page-tabs flex  md:block mb-4">
               {accountLinks.map((link, index) => (
                 <NavLink
                   to={link.path}

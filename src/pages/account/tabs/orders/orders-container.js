@@ -5,8 +5,8 @@ import OrdersComponent from "./orders-component";
 import { GET_ORDERS } from "../../../../graphql/queries/orders";
 
 const OrdersContainer = () => {
-  const { loading, data } = useQuery(GET_ORDERS, {
-    pollInterval: 100,
+  const { loading, data, error } = useQuery(GET_ORDERS, {
+    pollInterval: 500,
   });
 
   let { userInfo } = useSelector((state) => state.user);
@@ -15,6 +15,7 @@ const OrdersContainer = () => {
       loading={loading}
       orders={data?.getOrders}
       userInfo={userInfo}
+      error={error}
     />
   );
 };
