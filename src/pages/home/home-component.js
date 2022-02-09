@@ -8,21 +8,20 @@ const HomeComponent = () => {
         <section className="bg-landingBgColor w-10/12 my-0 mx-auto grid grid-cols-1 md:grid-cols-2 bottom-heading">
           <div className="flex flex-col justify-center gap-y-6 md:gap-y-10">
             <h1 className="text-3xl md:text-5xl">
-              We are building an army of chefs
+              Your Favourite Delicious Meals In The Galaxy!!🤩
             </h1>
             <p className="text-sm md:text-lg">
-              At Fedup, we have an ambitious plan to build a food service for
-              the gig economy by starting with providing chefs or homecooks a
-              platform to sell directly to customers
+              We pride ourselves on speed🚀. Order your favourite meals an get
+              it delivered in seconds.📦🤩
             </p>
 
-            <div className="hidden md:block">
+            <div className="md:block">
               <div className="flex gap-x-4">
                 <Link
-                  to="/"
+                  to="/auth/signin"
                   className="bg-primary text-white py-2 px-4 rounded-2xl"
                 >
-                  Get Started
+                  Sign In
                 </Link>
                 <Link
                   to="/"

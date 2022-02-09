@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { appRoutes } from "./routes";
 import MainLayout from "./layouts/index";
 import RequireAuth from "./routes/protected-route";
+import Loader from "./components/loader";
 
 const App = () => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -14,12 +15,12 @@ const App = () => {
   };
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
-        <MainLayout
-          showDropDown={showDropDown}
-          setShowDropDown={setShowDropDown}
-          toggleNav={toggleNav}
-        >
+      <MainLayout
+        showDropDown={showDropDown}
+        setShowDropDown={setShowDropDown}
+        toggleNav={toggleNav}
+      >
+        <Suspense fallback={<Loader />}>
           <Routes>
             {appRoutes.map(({ path, element, protected: protect }, index) => {
               return !protect ? (
@@ -33,8 +34,8 @@ const App = () => {
               );
             })}
           </Routes>
-        </MainLayout>
-      </Suspense>
+        </Suspense>
+      </MainLayout>
       <Toaster position="top-center" reverseOrder={false} />
     </BrowserRouter>
   );
