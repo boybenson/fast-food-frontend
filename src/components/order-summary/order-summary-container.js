@@ -42,7 +42,7 @@ const OrderSummaryContainer = () => {
     reference: new Date().getTime().toString(),
     email: userInfo?.email,
     amount: totalPrice * 100,
-    publicKey: "pk_test_1f8a48067da5793e978f1b1d07e1feea71c756f3",
+    publicKey: "pk_live_8b5be9684d8783a15e67bdb9c5418f3edffe302a",
     currency: "GHS",
     channels: ["mobile_money"],
     metadata: {
