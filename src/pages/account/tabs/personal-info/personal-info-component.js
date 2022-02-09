@@ -65,14 +65,14 @@ const PersonalInfoComponent = ({ userInfo, initialValues, loading }) => {
               </div>
               <div className="my-4">
                 <button
-                  disabled={isSubmitting}
+                  disabled={true}
                   type="submit"
                   className="w-full py-2 px-4 text-white bg-primary rounded-md cursor-pointer text-center flex justify-center"
                 >
                   {loading ? (
                     <RotateSpinner size={25} color="white" />
                   ) : (
-                    <p>Update</p>
+                    <p>Update (not working yet!) </p>
                   )}
                 </button>
               </div>
