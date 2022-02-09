@@ -86,7 +86,7 @@ const OrderSummaryComponent = ({
                 >
                   <option label="Select Payment Method" value="" />
                   <option value="cash_on_delivery" label="Cash On Delivery" />
-                  <option value="momo" label="Mobile Money" />
+                  <option value="momo" label="Mobile Money or Bank Card" />
                 </select>
                 {errors.paymentMethod && touched.paymentMethod && (
                   <p className="text-red-500">{errors.paymentMethod}</p>

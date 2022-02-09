@@ -44,7 +44,7 @@ const OrderSummaryContainer = () => {
     amount: totalPrice * 100,
     publicKey: "pk_live_8b5be9684d8783a15e67bdb9c5418f3edffe302a",
     currency: "GHS",
-    channels: ["mobile_money"],
+    channels: ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"],
     metadata: {
       email: userInfo?.email,
       phone: userInfo?.phone,
