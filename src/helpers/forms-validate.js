@@ -22,6 +22,8 @@ export const signUpFormValidate = (values) => {
 
   if (!values.phone) {
     errors.phone = "Phone Number Is Required";
+  } else if (values.phone.length !== 10) {
+    errors.phone = "Phone Number Number should be 10";
   }
 
   if (!values.password) {
