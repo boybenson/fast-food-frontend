@@ -78,6 +78,34 @@ const OrdersComponent = ({ loading, orders, userInfo, error }) => {
                 <RotateSpinner size={45} color="red" />
               </div>
             )}
+
+            {orders?.length === 0 && (
+              <div className="py-4 text-center">
+                <NavLink to="/en">
+                  <h3 className="flex justify-center gap-x-2">
+                    <span>No Orders Yet 🥺 </span>{" "}
+                    <span className="text-primary cursor-pointer">
+                      Keep Shopping
+                    </span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-primary cursor-pointer"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </h3>
+                </NavLink>
+              </div>
+            )}
+
             {error && (
               <div className="flex justify-center py-8">
                 <span className="relative inline-block px-4 py-2 font-semibold text-red-900 leading-tight">

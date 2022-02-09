@@ -1,0 +1,2 @@
+1. handle the loading state for specific category screen // 
+2. add some more catefory data

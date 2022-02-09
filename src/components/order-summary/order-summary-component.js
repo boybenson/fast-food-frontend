@@ -59,7 +59,7 @@ const OrderSummaryComponent = ({
             handleSubmit,
             isSubmitting,
           }) => (
-            <form className="" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className="py-2">
                 <TextField
                   type="text"

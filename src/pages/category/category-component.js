@@ -1,15 +1,22 @@
 import React from "react";
+import { RotateSpinner } from "react-spinners-kit";
 import OrderSummaryContainer from "../../components/order-summary/order-summary-container";
 
-const CategoryComponent = ({ data, categoryName, addToCart }) => {
+const CategoryComponent = ({ data, categoryName, addToCart, loading }) => {
   return (
     <div>
       <main className="py-2">
         <h1 className="my-0 mx-auto w-11/12 font-mono text-xl md:text-3xl px-2 py-4">
           Best {categoryName} In Town
         </h1>
+
         <div className="my-0 mx-auto w-11/12 grid grid-cols-1 md:grid-cols-3 gap-x-2">
           <div className=" col-span-2 grid grid-cols-1 md:grid-cols-4 gap-x-4 gap-y-4">
+            {loading && (
+              <div className="my-4 flex justify-center">
+                <RotateSpinner size={45} color="red" />
+              </div>
+            )}
             {data?.map((food, index) => (
               <div className="col-span-1 rounded-lg  bg-white px-2" key={index}>
                 <img className="w-full" src={food.image} alt="img" />

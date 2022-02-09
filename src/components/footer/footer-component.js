@@ -24,22 +24,6 @@ const FooterComponent = ({ support, followUs, countries, joinUs }) => {
               </li>
             ))}
           </ul>
-          <ul>
-            <h4 className="font-bold text-white text-xl">Countries</h4>
-            {countries.map((data, index) => (
-              <li key={index} className="text-sm text-gray-500 mt-2">
-                {data.label}
-              </li>
-            ))}
-          </ul>
-          <ul className="hidden m:block">
-            <h4 className="font-bold text-white text-xl">Join Us</h4>
-            {joinUs.map((data, index) => (
-              <li key={index} className="text-sm text-gray-500 mt-2">
-                {data.label}
-              </li>
-            ))}
-          </ul>
         </section>
 
         <section className="flex justify-between items-center mt-4">
