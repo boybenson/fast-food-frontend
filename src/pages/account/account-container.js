@@ -7,8 +7,11 @@ import Orders from "./tabs/orders/orders-container";
 // import Password from "./tabs/password/password-container";
 
 import OrderDetailsContainer from "./tabs/order-details/order-details-container";
+import { useSelector } from "react-redux";
+import CustomersContainer from "./tabs/customers/customers-container";
 
 const AccountContainer = () => {
+  let { userInfo } = useSelector((state) => state.user);
   const accountLinks = [
     {
       label: "My Info",
@@ -127,6 +130,8 @@ const AccountContainer = () => {
     <AccountComponent
       accountLinks={accountLinks}
       OrderDetailsContainer={<OrderDetailsContainer />}
+      userInfo={userInfo}
+      customersContainer={<CustomersContainer />}
     />
   );
 };

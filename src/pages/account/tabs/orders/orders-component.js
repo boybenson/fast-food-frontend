@@ -30,47 +30,46 @@ const OrdersComponent = ({ loading, orders, userInfo, error }) => {
               </thead>
 
               <tbody>
-                {orders &&
-                  orders.map((order, index) => (
-                    <tr key={index}>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          {`${order.id.slice(0, 7)}...`}
+                {orders?.map((order, index) => (
+                  <tr key={index}>
+                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        {`${order.id.slice(0, 7)}...`}
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p className="text-gray-900 whitespace-no-wrap">
+                        GH₵ {order.totalPrice.toFixed(2)}
+                      </p>
+                    </td>
+                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      {order.isDelivered ? (
+                        <span className="relative inline-block px-4 py-2 font-semibold text-green-900 leading-tight">
+                          <span
+                            aria-hidden
+                            className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                          ></span>
+                          <span className="relative">Delivered🎉🚀</span>
+                        </span>
+                      ) : (
+                        <span className="relative inline-block px-4 py-2 font-semibold text-red-900 leading-tight">
+                          <span
+                            aria-hidden
+                            className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
+                          ></span>
+                          <span className="relative">Processing😁</span>
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <NavLink to={`${order?.id}`}>
+                        <p className="text-primary whitespace-no-wrap underline cursor-pointer">
+                          Details
                         </p>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <p className="text-gray-900 whitespace-no-wrap">
-                          GH₵ {order.totalPrice.toFixed(2)}
-                        </p>
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        {order.isDelivered ? (
-                          <span className="relative inline-block px-4 py-2 font-semibold text-green-900 leading-tight">
-                            <span
-                              aria-hidden
-                              className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">Delivered🎉🚀</span>
-                          </span>
-                        ) : (
-                          <span className="relative inline-block px-4 py-2 font-semibold text-red-900 leading-tight">
-                            <span
-                              aria-hidden
-                              className="absolute inset-0 bg-red-200 opacity-50 rounded-full"
-                            ></span>
-                            <span className="relative">Processing😁</span>
-                          </span>
-                        )}
-                      </td>
-                      <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                        <NavLink to={`${order?.id}`}>
-                          <p className="text-primary whitespace-no-wrap underline cursor-pointer">
-                            Details
-                          </p>
-                        </NavLink>
-                      </td>
-                    </tr>
-                  ))}
+                      </NavLink>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             {loading && (
