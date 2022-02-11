@@ -12,25 +12,6 @@ const HeaderComponent = ({
   return (
     <div className={`border shadow-sm sticky top-0 ${bg ?? "bg-white"}`}>
       <section className="flex justify-between w-11/12 my-0 mx-auto items-center  top-heading">
-        <div>
-          <NavLink to="/">
-            <img
-              src="/assets/images/logo.svg"
-              alt="logo"
-              height={80}
-              width={100}
-            />
-          </NavLink>
-        </div>
-
-        <div className="hidden md:flex">
-          <ul className="flex gap-x-6">
-            <li className="cursor-pointer">How It Works</li>
-            <li className="cursor-pointer">Testimonials</li>
-            <li className="cursor-pointer">FAQs</li>
-          </ul>
-        </div>
-
         {!userInfo && (
           <div className="hidden md:block">
             <div className="flex gap-x-4">
