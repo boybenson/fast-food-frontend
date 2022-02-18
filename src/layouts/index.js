@@ -5,9 +5,7 @@ import NewHeader from "../components/new-header/header-container";
 const MainLayout = ({ children }) => {
   return (
     <div>
-      <div className="sticky top-0">
-        <NewHeader />
-      </div>
+      <NewHeader />
 
       {children}
       <Footer />
