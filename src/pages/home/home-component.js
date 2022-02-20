@@ -99,13 +99,13 @@ const HomeComponent = () => {
           <form className="py-4">
             <input
               type="text"
-              className="py-4 px-12 mr-2 rounded-md"
+              className="py-4 px-12 mr-2 rounded-md my-2"
               placeholder="Legon Campus...."
             />
             <input
               type="submit"
               value="send"
-              className="bg-primary text-white py-4 px-4 rounded-md cursor-pointer"
+              className="bg-primary my-2 text-white py-4 px-4 rounded-md cursor-pointer"
             />
           </form>
         </div>
